@@ -2,7 +2,6 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
-
 // Middleware
 const errorHandler = require('./infrastructure/web/middleware/errorHandler');
 
@@ -35,7 +34,7 @@ app.use(helmet({
 }));
 
 app.use(cors({
-    origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
+    origin: process.env.NODE_ENV === 'production' ? true : ['http://localhost:3000', 'http://localhost', 'http://127.0.0.1'],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
