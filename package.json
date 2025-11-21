@@ -1,0 +1,12 @@
+{
+  "name": "residential-complex",
+  "version": "1.0.0",
+  "description": "Sistema de Gestión de Conjuntos Residenciales",
+  "scripts": {
+    "install": "cd backend && npm install",
+    "start": "cd backend && npm start"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
